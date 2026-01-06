@@ -1,14 +1,13 @@
 const express = require("express");
 const Order = require("../models/Order");
 const authMiddleware = require("../middleware/authMiddleware");
-const router = express.Router();
 const razorpay = require("../utils/razorpay");
 
+const router = express.Router();
+
 /* =====================
-   CREATE ORDER
+   RAZORPAY ORDER CREATE
 ===================== */
-
-
 router.post("/razorpay-order", authMiddleware, async (req, res) => {
   try {
     const { amount } = req.body;
@@ -16,16 +15,23 @@ router.post("/razorpay-order", authMiddleware, async (req, res) => {
     const order = await razorpay.orders.create({
       amount: amount * 100, // rupees → paise
       currency: "INR",
-      receipt: `rcpt_${Date.now()}`,
+      receipt: "rcpt_" + Date.now(),
     });
 
-    res.json(order);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.json({
+      orderId: order.id,
+      amount: order.amount,
+      currency: order.currency,
+      key: process.env.RAZORPAY_KEY_ID, // ✅ REQUIRED
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 });
 
-
+/* =====================
+   SAVE ORDER (AFTER PAYMENT)
+===================== */
 router.post("/", authMiddleware, async (req, res) => {
   try {
     const { items, address, subtotal, shipping, total } = req.body;
@@ -35,7 +41,7 @@ router.post("/", authMiddleware, async (req, res) => {
     }
 
     const order = new Order({
-      user: req.userId, // ✅ now guaranteed
+      user: req.userId,
       items,
       address,
       subtotal,
@@ -44,7 +50,6 @@ router.post("/", authMiddleware, async (req, res) => {
     });
 
     await order.save();
-
     res.status(201).json(order);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -56,30 +61,14 @@ router.post("/", authMiddleware, async (req, res) => {
 ===================== */
 router.get("/my", authMiddleware, async (req, res) => {
   try {
-    const orders = await Order.find({ user: req.userId })
-      .sort({ createdAt: -1 });
+    const orders = await Order.find({ user: req.userId }).sort({
+      createdAt: -1,
+    });
 
     res.json(orders);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
-router.post("/create-order", authMiddleware, async (req, res) => {
-  try {
-    const { amount } = req.body;
-
-    const options = {
-      amount: amount * 100,
-      currency: "INR",
-      receipt: "order_rcptid_" + Date.now(),
-    };
-
-    const order = await razorpay.orders.create(options);
-    res.json(order);
-  } catch (error) {
-    res.status(500).json({ message: "Razorpay order failed" });
-  }
-});
-
 
 module.exports = router;
