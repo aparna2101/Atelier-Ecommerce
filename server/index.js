@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 
 const mongoose = require("mongoose");
-
+const cors =require("cors");
 const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
 const orderRoutes = require("./routes/orderRoutes");
@@ -12,7 +12,6 @@ const app = express();
 /* =====================
    GLOBAL MIDDLEWARE
 ===================== */
-import cors from "cors";
 
 app.use(cors({
   origin: [
