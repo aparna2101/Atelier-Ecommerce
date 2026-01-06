@@ -21,7 +21,7 @@ const Admin = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/products", {
+      const res = await fetch("https://atelier-ecommerce.onrender.com/api/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

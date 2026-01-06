@@ -48,7 +48,7 @@ const Checkout = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders", {
+      const res = await fetch("https://atelier-ecommerce.onrender.com/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const Checkout = () => {
   const handleRazorpayPayment = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/orders/razorpay-order",
+        "https://atelier-ecommerce.onrender.com/api/orders/razorpay-order",
         {
           method: "POST",
           headers: {

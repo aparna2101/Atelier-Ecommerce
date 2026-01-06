@@ -25,7 +25,7 @@ const ProductDetails = () => {
 const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`https://atelier-ecommerce.onrender.com/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

@@ -26,7 +26,7 @@ const MyOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/orders/my", {
+        const res = await fetch("https://atelier-ecommerce.onrender.com/api/orders/my", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
