@@ -1,73 +1,29 @@
-# LUXE - Premium E-Commerce
+# Atelier – Full Stack E-Commerce Website
 
-A modern, responsive e-commerce shopping website built with React and Vite.
+Atelier is a full-stack e-commerce web application built using the MERN stack.
 
-## Features
+## 🔗 Live Demo
+Frontend: https://atelier-ecommerce-frontend.netlify.app  
+Backend API: https://atelier-ecommerce.onrender.com
 
-- Product catalog with filtering and sorting
-- Product details with related items
-- Shopping cart with quantity management
-- User authentication pages (Login/Register)
-- Responsive design for all devices
-- Clean, modern UI
+## 🚀 Features
+- User authentication (JWT)
+- Product listing from MongoDB
+- Add to cart functionality
+- Orders management
+- Responsive UI
+- Backend REST API
 
-## Tech Stack
+## 🛠 Tech Stack
+- Frontend: React, TypeScript, Vite, Tailwind CSS
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT
+- Deployment: Netlify (Frontend), Render (Backend)
 
-- React 18
-- Vite
-- TypeScript
-- Tailwind CSS
-- React Router
+## 📦 API Endpoints
+- GET /api/products
+- POST /api/auth/login
+- POST /api/orders
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd <project-folder>
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open your browser and visit `https://atelier-ecommerce-frontend.netlify.app/`
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── layout/          # Navbar, Footer, Layout
-│   ├── product/         # ProductCard
-│   └── ui/              # Reusable UI components
-├── context/             # Cart context
-├── data/                # Product data
-├── hooks/               # Custom hooks
-├── pages/               # Page components
-└── lib/                 # Utilities
-```
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## License
-
-MIT
+## 📁 Project Structure
