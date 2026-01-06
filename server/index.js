@@ -12,7 +12,16 @@ const app = express();
 /* =====================
    GLOBAL MIDDLEWARE
 ===================== */
-app.use(cors());
+import cors from "cors";
+
+app.use(cors({
+  origin: [
+    "https://atelier-ecommerce-frontend.netlify.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
