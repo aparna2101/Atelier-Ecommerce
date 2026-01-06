@@ -44,7 +44,7 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and visit `https://atelier-ecommerce.onrender.com/`
+4. Open your browser and visit `https://atelier-ecommerce-frontend.netlify.app/`
 
 ## Project Structure
 

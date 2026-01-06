@@ -15,10 +15,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product);
-    toast.success(`₹{product.name} added to cart`);
+    toast.success(`${product.name} added to cart`);
   };
   return (
-    <Link to={`/product/₹{product._id}`} className="card-product group block">
+    <Link to={`/product/${product._id}`} className="card-product group block">
       {/* Image */}
       <div className="relative aspect-[3/4] overflow-hidden bg-muted">
         <img

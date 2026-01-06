@@ -15,7 +15,7 @@ const Products = () => {
      FETCH PRODUCTS (BACKEND)
   ========================== */
   useEffect(() => {
-    fetch('http://:/api/products')
+    fetch('https://atelier-ecommerce.onrender.com/api/products')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
