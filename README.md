@@ -27,3 +27,5 @@ Backend API: https://atelier-ecommerce.onrender.com
 - POST /api/orders
 
 ## 📁 Project Structure
+## 👤 Author
+Aparna Chaurasia
