@@ -44,7 +44,7 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and visit `http://localhost:8080`
+4. Open your browser and visit `https://atelier-ecommerce.onrender.com/`
 
 ## Project Structure
 
