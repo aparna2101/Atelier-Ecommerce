@@ -15,7 +15,7 @@ const Products = () => {
      FETCH PRODUCTS (BACKEND)
   ========================== */
   useEffect(() => {
-    fetch('http://localhost:/api/products')
+    fetch('http://:/api/products')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

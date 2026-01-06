@@ -10,7 +10,7 @@ const Home = () => {
 
   // 🔹 Fetch real products from backend
   useEffect(() => {
-    fetch('http://localhost:/api/products')
+    fetch('https://atelier-ecommerce.onrender.com//api/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
