@@ -2,7 +2,8 @@
 
 Atelier is a full-stack e-commerce web application built using the MERN stack.
 
-## 🔗 Live Demo
+## 🔗 Live Demo 
+https://atelier-ecommerce-frontend.netlify.app/
 Frontend: https://atelier-ecommerce-frontend.netlify.app  
 Backend API: https://atelier-ecommerce.onrender.com
 
